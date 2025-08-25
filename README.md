@@ -30,6 +30,7 @@ g++ -std=c++11 -O2 example/example.cpp \
 
 ### 3.2 Python
 ~~~
-python3 example/zimmergripper.py libzimmergripper.so file path'
+python3 example/zimmergripper.py 'zimmergripper.h include path' 'libzimmergripper.so file path'
+ex : python3 example/zimmergripper.py include lib/libzimmerbripper.so
 ~~~
 ###
