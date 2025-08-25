@@ -10,5 +10,5 @@ build/
 *.o
 
 # 특정 파일
-sample
-scripts/
+demo
+**/__pycache__/

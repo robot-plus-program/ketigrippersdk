@@ -20,8 +20,11 @@ pip3 install pymodbus
 ## 3. Run example
 ### 3.1 C++
 ~~~
-g++ example/example.cpp -o example -I${PWD}/../include -L${PWD}/../lib -lzimmergripper -Wl,"-rpath,${PWD}../lib"
-./example
+g++ -std=c++11 -O2 example/example.cpp \
+  -I./include -L./lib -lzimmergripper \
+  -Wl,-rpath,'$ORIGIN/lib' \
+  -o demo
+./demo
 ~~~
 ###
 

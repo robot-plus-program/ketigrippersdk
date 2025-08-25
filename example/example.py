@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 
 import os, sys
-sys.path.append(f"{os.getcwd()}/../include")
+sys.path.append(f"{sys.argv[1]}")
 from zimmergripper import *
 
-gripper = KetiZimmer(f'{os.getcwd()}/../lib/libzimmergripper.so')
+gripper = KetiZimmer(f'{sys.argv[2]}')
 gripper.Connect('192.168.137.254', 502)
+gripper.Init()
+
+gripper.Grip()
+print(gripper.CurPos())
+
+gripper.Release()
+print(gripper.CurPos())
 
 
