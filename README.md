@@ -20,14 +20,13 @@ pip3 install pymodbus
 ## 3. Run example
 ### 3.1 C++
 ~~~
-g++ src/sample.cpp -o sample -Iinclude -Llib/22.04 -lzimmergripper -Wl,"-rpath,lib/22.04"
-./sample
+g++ example/example.cpp -o example -I${PWD}/../include -L${PWD}/../lib -lzimmergripper -Wl,"-rpath,${PWD}../lib"
+./example
 ~~~
 ###
 
 ### 3.2 Python
 ~~~
-edit "gripper = KetiZimmer('libzimmergripper.so file path')"
-python3 scripts/zimmergripper.py
+python3 example/zimmergripper.py libzimmergripper.so file path'
 ~~~
 ###

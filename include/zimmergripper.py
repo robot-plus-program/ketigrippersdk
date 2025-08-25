@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import ctypes
+import os
 
 class KetiZimmer:
     def __init__(self, so_file):
@@ -39,9 +40,8 @@ class KetiZimmer:
         self.lib.Move.argtypes = [ctypes.c_void_p, ctypes.c_uint16]
         self.lib.Move(self.module, position)
 
-import time, os
 if __name__ == '__main__':
-    gripper = KetiZimmer(f'{os.getcwd()}/../libzimmergripper.so')
+    gripper = KetiZimmer(f'{os.getcwd()}/libzimmergripper.so')
     gripper.Connect('192.168.137.254', 502)
     gripper.Init()
     

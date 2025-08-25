@@ -64,6 +64,8 @@ public:
 	void gripper_stop();
 	void set_inner();
 	void set_outer();
+    double gripper_cur_pos(){return static_cast<double>(reg_read[2]);}
+    int gripper_cur_sw(){return reg_read[0];}
 
 private:
     modbus_t *mb;
@@ -86,11 +88,13 @@ extern "C"{
     void Connect(ZimmerGripper* pthis, const char * ip, int port);
     void Disconnect(ZimmerGripper* pthis);
     void Init(ZimmerGripper* pthis);
-    void Grip(ZimmerGripper* pthis);
-    void Release(ZimmerGripper* pthis);
+    void Grip(ZimmerGripper* pthis, bool sync = true);
+    void Release(ZimmerGripper* pthis, bool sync = true);
     bool IsConnected(ZimmerGripper* pthis);
 	void SetOpt(ZimmerGripper* pthis, uint8_t velocity, uint8_t force);
 	void Move(ZimmerGripper* pthis, uint16_t position);
+    double CurPos(ZimmerGripper* pthis);
+    int CurSW(ZimmerGripper* pthis);
 }
 
 #endif // ZIMMERGRIPPER_H
