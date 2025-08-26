@@ -30,9 +30,9 @@ class KetiZimmer:
         self.lib.Release(self.module, sync)
 
     def IsConnected(self):
-        self.lib.IsAlive.argtypes = [ctypes.c_void_p]
-        self.lib.IsAlive.restype = ctypes.c_bool
-        return self.lib.IsAlive(self.module)
+        self.lib.IsConnected.argtypes = [ctypes.c_void_p]
+        self.lib.IsConnected.restype = ctypes.c_bool
+        return self.lib.IsConnected(self.module)
     
     def Move(self, position):
         self.lib.Move.argtypes = [ctypes.c_void_p, ctypes.c_uint16]
