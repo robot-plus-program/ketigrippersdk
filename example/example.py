@@ -8,10 +8,13 @@ gripper = KetiZimmer(f'{sys.argv[2]}')
 gripper.Connect('192.168.137.254', 502)
 gripper.Init()
 
+gripper.Move(1500)
 gripper.Grip()
 print(gripper.CurPos())
 
+
 gripper.Release()
 print(gripper.CurPos())
+
 
 
