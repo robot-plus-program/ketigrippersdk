@@ -11,4 +11,4 @@ build/
 
 # 특정 파일
 demo
-**/__pycache__/
+include/__pycache__/
